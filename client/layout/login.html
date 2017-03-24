@@ -1,0 +1,19 @@
+<template name="login">
+  {{#if loggingIn}}
+    <p class="white-text"> Loading </p>
+  {{else}}
+
+      <div id="loginBox" style="{{loginStyle}}" >
+        <form>
+            <input id= "email" class="white-text resetStyleOnClick" type="email" name="loginEmail" placeholder="Email">
+            <input id= "password" class="white-text resetStyleOnClick" type="password" name="loginPassword" placeholder="Password">
+            <input class="waves-effect waves-light btn-large white grey-text" type="submit" value="Login">
+        </form>
+      </div>
+      {{#if loginFail}}
+      <p  class="center orange-text text-accent-1"> Login Failed</p>
+      <p id="resetPassword" class="center orange-text text-accent-1">Reset Password for {{userEmail}}? </p>
+      {{/if}}
+
+  {{/if}}
+</template>

@@ -1,0 +1,35 @@
+<template name="header">
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper white">
+        <div class="col s12">
+          <a href="#" data-activates="mobile-demo" class="grey-text text-lighten-1 button-collapse"><i class="mdi-navigation-menu"></i></a>
+      	<ul>
+          <li><a href="#" class="teal-text text-lighten-2 " style=" font-size: 1.6rem"> Keyscores Admin</a></li>
+      		<li class="grey-text text-darken-1" style=" font-size: 1.6rem">
+          </li>
+      	</ul>
+
+
+        <ul class="right hide-on-med-and-down grey-text text-darken-4">
+          <li><a href="{{pathFor 'dashboard'}}" class="grey-text text-darken-1" > Dashboard</a></li>
+          <li><a href="{{pathFor 'stream'}}" class="grey-text text-darken-1" > Streams</a></li>
+          <li><a href="{{pathFor 'aggregate'}}" class="grey-text text-darken-1" > Aggregate</a></li>
+          <li><a href="{{pathFor 'lookup'}}" class="grey-text text-darken-1" > Lookup</a></li>
+
+
+
+
+
+          <!-- <li class="teal-text text-lighten-2 "  style="padding-right: 30px"> {{> loginButtons align="right"}} </li> -->
+
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="{{pathFor 'dashboard'}}" class="grey-text text-darken-1" > Dashboard</a></li>
+
+        </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</template>

@@ -1,0 +1,70 @@
+
+<template name="lookup">
+  <div class="">
+    <h5 class="center"> Lookup Tables </h5>
+    <div class="center">
+      <!-- Dropdown Trigger -->
+        <a class='dropdown-button btn-flat grey white-text' href='#' data-activates='forms-dropdown'>FormA <i class="material-icons right">expand_more</i></a>
+
+        <!-- Dropdown Structure -->
+        <ul id='forms-dropdown' class='dropdown-content'>
+          <li><a href="#!">Forms</a></li>
+          <li class="divider"></li>
+          <li><a href="#!">three</a></li>
+        </ul>
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <table>
+          <thead>
+            <tr>
+                <th>Name</th>
+                <th>Item Name</th>
+                <th>Item Price</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Alvin</td>
+              <td>Eclair</td>
+              <td>$0.87</td>
+            </tr>
+            <tr>
+              <td>Alan</td>
+              <td>Jellybean</td>
+              <td>$3.76</td>
+            </tr>
+            <tr>
+              <td>Jonathan</td>
+              <td>Lollipop</td>
+              <td>$7.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col s6">
+            <div class="card">
+              <div class="card-content">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input id="first_name" type="text" class="validate">
+                    <label for="first_name">First Name</label>
+                  </div>
+                  <div class="input-field col s6">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                  </div>
+                </div>
+              </div>
+              <div class="card-action">
+                <div class="btn-flat">Save</div>
+              </div>
+            </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</template>

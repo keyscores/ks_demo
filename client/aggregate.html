@@ -1,0 +1,41 @@
+
+<template name="aggregate">
+  <div class="">
+      <h5 class="center"> Aggregation Pipelines </h5>
+      <div class="center">
+        <div class="btn grey white-text"> new pipeline </div>
+      </div>
+
+
+    <div class="row">
+      {{#each listPipeline}}
+      <div class="col s4">
+        <h5 class="center"> {{this}} </h5>
+        <ul class="collapsible" data-collapsible="accordion">
+          {{#each listPipelineSteps}}
+          <li>
+            <div class="collapsible-header"><i class="material-icons red-text text-lighten-2">fiber_manual_record </i> {{this}}</div>
+            <div class="collapsible-body">
+              Stream source: xsdffd
+              checkbox: get, listen on, dropbox
+              schema
+
+              transforms:
+              schema transform
+
+            </div>
+          </li>
+
+          {{/each}}
+          <li class="center">
+            <div class="btn-flat grey-text"> new step </div>
+          </li>
+        </ul>
+      </div>
+      {{/each}}
+    </div>
+
+  </div>
+
+
+</template>

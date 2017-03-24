@@ -1,0 +1,30 @@
+<template name="home">
+<body class="home-background">
+
+<div class="backgroundchart hide-on-small-only"></div>
+
+<div class="container" style= "min-height: 100%">
+
+
+	 <div class="row">
+		<div class="col s12 m9 ">
+			 <h1 class="white-text">Sofa Digital </h1>
+			 <h3 class="white-text"> Online reports</h3>
+       <div >
+         <p class="white-text">
+         Powered By
+         </p>
+         <img  class = "left" src="/keyscores.white.png" height="30">
+       </div>
+		</div>
+		<div class="col s12 m3 right" >
+		{{#if currentUser}}
+			<a class="waves-effect waves-light btn-large white grey-text right" href={{pathFor 'start'}} > View</a>
+		{{else}}
+      {{> login}}
+		{{/if}}
+		</div>
+	</div>
+</div>
+</body>
+</template>
