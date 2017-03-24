@@ -1,10 +1,10 @@
 
-Template.stream.rendered = function(){
+Template.stream.rendered = function () {
   $('.collapsible').collapsible()
 }
 
 Template.stream.helpers({
-  listSteams: function(){
-    return [1,2,3]
+  listSteams: function () {
+    return [1, 2, 3]
   }
-});
+})
