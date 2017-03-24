@@ -3,6 +3,7 @@ var Readable = require('stream').Readable
 var Writable = require('stream').Writable
 var Transform = require('stream').Transform
 var https = require('https')
+import { Random } from 'meteor/random'
 
 var faucet = Readable({objectMode: true})
 faucet._read = function () {
@@ -64,7 +65,7 @@ Meteor.methods({
       // console.log('jsonCleaner chunk', chunk);
       newObj = {}
       newObj['name'] = chunk.t
-      newObj['price'] = chunk.l
+      newObj['price'] = Number(chunk.l) * Random.fraction()
       newObj['time'] = new Date
       newObj['lastTrade'] = new Date(chunk.lt_dts)
 
