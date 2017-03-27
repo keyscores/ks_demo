@@ -8,3 +8,16 @@ Template.stream.helpers({
     return [1, 2, 3]
   }
 })
+
+Template.stream.events({
+  "click li": function(event, template){
+    //  console.log('hello');
+     Meteor.setTimeout(function(){
+       $('ul.tabs').tabs();
+       $('select').material_select();
+       Materialize.updateTextFields();
+
+
+     }, 100);
+  }
+});

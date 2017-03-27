@@ -55,9 +55,19 @@ Template.dashboard.rendered = function () {
                   ticks: {
                       beginAtZero:true
                   }
+              }],
+              xAxes: [{
+                type: 'time',
+                unit: 'day',
+                unitStepSize: 1,
+                time: {
+                  displayFormats: {
+                    'hour': 'HH:mm'
+                  }
+                }
               }]
+            }
           }
-      }
   });
 
   // setInterval(function () {
@@ -69,7 +79,8 @@ Template.dashboard.rendered = function () {
   //     myChart.update()
   // }, 1000);
 
-  let query = Pond.find();
+
+  let query = Pond.find({});
   let handle = query.observeChanges({
     changed: function (id, fields) {
       // changed stuff
@@ -102,3 +113,18 @@ Template.dashboard.helpers({
     return [1, 2, 3]
   }
 })
+
+Template.dashboard.events({
+  "click #startStream": function(event, template){
+     Meteor.call('startStream')
+  },
+  "click #stopStream": function(event, template){
+     Meteor.call('stopStream')
+  },
+  "click #startAggregate": function(event, template){
+     Meteor.call('startAggregate')
+  },
+  "click #stopAggregate": function(event, template){
+     Meteor.call('stopAggregate')
+  }
+});

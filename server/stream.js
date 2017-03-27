@@ -5,17 +5,18 @@ var Transform = require('stream').Transform
 var https = require('https')
 import { Random } from 'meteor/random'
 
-var faucet = Readable({objectMode: true})
-faucet._read = function () {
-  // sets a readable stream that setQuote can implement
-}
+var faucet //= Readable({objectMode: true})
+// faucet._read = function () {
+//   // sets a readable stream that setQuote can implement
+// }
 
+var timer
 Meteor.methods({
   startStream: function () {
-    setTimeout(function () {
-      clearTimeout(timer)
-      faucet.push(null)
-    }, 5 * 1000)
+    faucet = Readable({objectMode: true})
+    faucet._read = function () {
+      // sets a readable stream that setQuote can implement
+    }
 
     function getQuote (ticker) {
       https.get({
@@ -82,7 +83,7 @@ Meteor.methods({
     // }
 
     // do the http request every n seconds
-    var timer = setInterval(function () {
+    timer = setInterval(function () {
       // faucet.push('{"a": 3, "b": 4}')
       getQuote('AAPL')
     }, 1000)
@@ -112,5 +113,16 @@ Meteor.methods({
 
     // for debugging
     writeToDB.pipe(ensureStringForProcess).pipe(process.stdout)
+  },
+  stopStream: function () {
+    // setTimeout(function () {
+    if ( faucet._readableState.flowing ) {
+      clearInterval(timer)
+      faucet.pause()
+    }
+
+
+    // faucet.push(null)
+    // }, 5 * 1000)
   }
 })
