@@ -1,0 +1,32 @@
+
+
+<template name="dashboard">
+  <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+  <div class="grid ">
+    <div class="grid-item grid-item--width2">
+      <div>
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+    <div class="grid-item grid-item--width2">
+      {{>aggregateBar}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="section center">
+      <div class="btn" id='startStream'> Start Stream </div>
+      <div class="btn" id='stopStream'> Stop Stream </div>
+      <div class="btn" id='startAggregate'> Start Aggregate </div>
+      <div class="btn" id='stopAggregate'> Stop Aggregate </div>
+    </div>
+  </div>
+
+  <!-- <div class="gridster grey lighten-3">
+      <ul>
+        {{#each grid}}
+          <li class="white" data-row="1" data-col="1" data-sizex="1" data-sizey="1"></li>
+
+        {{/each}}
+      </ul>
+  </div> -->
+</template>

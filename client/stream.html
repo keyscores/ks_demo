@@ -146,9 +146,12 @@
           <!-- fiber_manual_record </i> Transform - map values</div> -->
         <div class="collapsible-body">
           <div class="row center">
-            <div class="row center">
-              <p> Map Value</p>
-              <ul class="collapsible" data-collapsible="accordion">
+            <div class="row">
+              <div class="input-field col s6 offset-s3">
+                <input id="icon_prefix" type="text" class="validate" value="Map Values">
+                <label for="icon_prefix">Step Name</label>
+              </div>
+              <ul class="collapsible col s6 offset-s3" data-collapsible="accordion">
                 <li>
                   <div class="collapsible-header"><i class="material-icons">filter_drama</i>Transform Params</div>
                   <div class="collapsible-body">
@@ -164,10 +167,11 @@
                   </div>
                 </li>
               </ul>
-
-              <div class="btn"> View Log Files</div>
+              <br>
             </div>
           </div>
+          <div class="row center"><div class="btn"> View Log Files</div></div>
+
         </div>
       </li>
       <!-- {{/each}} -->
