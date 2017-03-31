@@ -94,7 +94,7 @@ Meteor.methods({
     timer = setInterval(function () {
       // faucet.push('{"a": 3, "b": 4}')
       getQuote('AAPL')
-    }, 5000)
+    }, 1000)
 
     const ensureStringForProcess = new Transform({objectMode: true})
     ensureStringForProcess._transform = function (chunk, encoding, done) {
