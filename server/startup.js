@@ -1,3 +1,4 @@
 Meteor.startup(function(){
-  Lookup.insert({ apple_portfolio: 1000 })
+  Lookup.remove()
+  Lookup.insert({ shares: 13, ticker: 'AAPL' })
 });

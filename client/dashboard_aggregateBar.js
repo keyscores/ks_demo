@@ -5,16 +5,10 @@ Template.aggregateBar.rendered = function(){
       data: {
           labels: [],
           datasets: [{
-              label: 'Price',
+              label: 'Portfolio Value',
               data: [],
-              backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-              ],
-              borderColor: [
-                  'rgba(255,99,132,1)',
-                  'rgba(54, 162, 235, 1)',
-              ],
+              backgroundColor: 'rgba(255, 99, 132, 0.2)',
+              borderColor: 'rgba(255, 99, 132, 0.2)',
               borderWidth: 1
           }]
       },
@@ -24,6 +18,24 @@ Template.aggregateBar.rendered = function(){
                   ticks: {
                       beginAtZero:true
                   }
+              }],
+              xAxes: [{
+                type: 'time',
+                unit: 'day',
+                unitStepSize: 1,
+                scaleSteps : 10,
+                maxTicksLimit: 2,
+                barPercentage: 0.2,
+                barThickness : 3,
+
+                ticks: {
+                  maxRotation: 0 // angle in degrees
+                },
+                time: {
+                  displayFormats: {
+                    'hour': 'HH:mm:'
+                  }
+                }
               }]
           }
       }
@@ -35,8 +47,8 @@ Template.aggregateBar.rendered = function(){
       // changed stuff
     },
     added: function (id, fields) {
-        myChart.data.datasets[0].data.push(fields.price)
-        myChart.data.labels.push(fields.name)
+        myChart.data.datasets[0].data.push(fields.porfolioValue)
+        myChart.data.labels.push(fields.time)
         myChart.update()
       }
   });

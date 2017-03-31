@@ -9,11 +9,27 @@ import { Meteor } from 'meteor/meteor'
 //   }
 // )
 
-Router.route('/dashboard', function () {
+Router.route('/admin', function () {
   var self = this
   if (this.ready()) {
-    self.render('dashboard')
+    self.render('dashboardEditor')
     self.layout('layout')
+  }
+})
+
+Router.route('/edit_dashboard', function () {
+  var self = this
+  if (this.ready()) {
+    self.render('dashboardEditor')
+    self.layout('layout')
+  }
+})
+
+Router.route('/', function () {
+  var self = this
+  if (this.ready()) {
+    self.render('start')
+    // self.layout('layout')
   }
 })
 

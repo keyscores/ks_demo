@@ -24,7 +24,10 @@ Meteor.methods({
         method: 'GET',
         hostname: 'www.google.com',
         path: '/finance/info?client=ig&q=' + ticker,
-        timeout: 1000
+        timeout: 1000,
+        // headers: {
+        //   'User-Agent': 'request'
+        // }
       }, function (response) {
         response.setEncoding('utf8')
         var data = ''
@@ -35,6 +38,7 @@ Meteor.methods({
 
         response.on('end', function () {
           if (data.length > 0) {
+            console.log(data);
             faucet.push(data.substring(3))
           }
         })

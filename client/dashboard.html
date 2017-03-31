@@ -1,17 +1,18 @@
-
-
-<template name="dashboard">
-  <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
-  <div class="grid ">
-    <div class="grid-item grid-item--width2">
-      <div>
-        <canvas id="myChart"></canvas>
-      </div>
-    </div>
-    <div class="grid-item grid-item--width2">
-      {{>aggregateBar}}
-    </div>
+<template name="start">
+  <div class="container">
+    <h4 class="center"> Portfolio </h4>
+    {{>dashboard}}
   </div>
+</template>
+
+<template name="dashboardEditor">
+  <h5 class="center"> Edit Dashboard</h5>
+  <ul class="pagination center">
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <li class="active"><a href="#!">Portfolio</a></li>
+    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+  </ul>
+  {{>dashboard editor=true}}
   <div class="row">
     <div class="section center">
       <div class="btn" id='startStream'> Start Stream </div>
@@ -20,6 +21,25 @@
       <div class="btn" id='stopAggregate'> Stop Aggregate </div>
     </div>
   </div>
+</template>
+
+<template name="dashboard">
+    <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+    <div class="grid" style="{{#if this.editor}} background: #DDD {{/if}}">
+      <div class="grid-item grid-item--width2">
+        <div>
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+      <div class="grid-item grid-item--width2">
+        {{>aggregateBar}}
+      </div>
+      <div class="grid-item" style="height: 100px">
+        {{#if this.editor}}
+        Testing {{this.editor}}
+        {{/if}}
+      </div>
+    </div>
 
   <!-- <div class="gridster grey lighten-3">
       <ul>

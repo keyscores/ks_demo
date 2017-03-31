@@ -5,6 +5,14 @@ $dropdown-color: $primary-color !default;
 
 @import "{materialize:materialize}/sass/materialize";
 
+.pagination li a {
+    color: color("grey", "base");
+}
+
+th {
+  color: $primary-color;
+}
+$radio-fill-color: $primary-color !default;
 
 // @import './materialize_color.scss';
 // // ==========================================================================

@@ -5,8 +5,8 @@ body { font-family: sans-serif; }
 /* ---- grid ---- */
 
 .grid {
-  background: #DDD;
-  max-width: 1200px;
+  background: white;
+  max-width: 1800px;
 }
 
 /* clear fix */

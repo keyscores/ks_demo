@@ -60,11 +60,16 @@ Template.dashboard.rendered = function () {
                 type: 'time',
                 unit: 'day',
                 unitStepSize: 1,
-                time: {
-                  displayFormats: {
-                    'hour': 'HH:mm'
-                  }
-                }
+                ticks: {
+                  max: 2,
+
+                  maxRotation: 0 // angle in degrees
+                },
+                // time: {
+                //   displayFormats: {
+                //     'hour': 'mm'
+                //   }
+                // }
               }]
             }
           }
@@ -114,7 +119,7 @@ Template.dashboard.helpers({
   }
 })
 
-Template.dashboard.events({
+Template.dashboardEditor.events({
   "click #startStream": function(event, template){
      Meteor.call('startStream')
   },

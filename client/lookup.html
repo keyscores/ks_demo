@@ -4,13 +4,13 @@
     <h5 class="center"> Lookup Tables </h5>
     <div class="center">
       <!-- Dropdown Trigger -->
-        <a class='dropdown-button btn-flat grey white-text' href='#' data-activates='forms-dropdown'>FormA <i class="material-icons right">expand_more</i></a>
+        <a class='dropdown-button btn-flat grey white-text' href='#' data-activates='forms-dropdown'>Portfolio <i class="material-icons right">expand_more</i></a>
 
         <!-- Dropdown Structure -->
         <ul id='forms-dropdown' class='dropdown-content'>
-          <li><a href="#!">Forms</a></li>
+          <li><a href="#!">Web Forms</a></li>
           <li class="divider"></li>
-          <li><a href="#!">three</a></li>
+          <li><a href="#!">Portfolio</a></li>
         </ul>
     </div>
     <div class="row">
@@ -19,26 +19,27 @@
           <thead>
             <tr>
                 <th>Name</th>
-                <th>Item Name</th>
-                <th>Item Price</th>
+                <th>Ticker</th>
+                <th>Shares</th>
+                <th>Transactions</th>
             </tr>
           </thead>
 
           <tbody>
             <tr>
-              <td>Alvin</td>
-              <td>Eclair</td>
-              <td>$0.87</td>
+              <td>Apple</td>
+              <td>AAPL</td>
+              <td>10</td>
             </tr>
             <tr>
-              <td>Alan</td>
-              <td>Jellybean</td>
-              <td>$3.76</td>
+              <td>Apple</td>
+              <td>AAPL</td>
+              <td>-1</td>
             </tr>
             <tr>
-              <td>Jonathan</td>
-              <td>Lollipop</td>
-              <td>$7.00</td>
+              <td>Apple</td>
+              <td>AAPL</td>
+              <td>4</td>
             </tr>
           </tbody>
         </table>
@@ -47,13 +48,30 @@
             <div class="card">
               <div class="card-content">
                 <div class="row">
-                  <div class="input-field col s6">
-                    <input id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
+                  <div class="input-field col s4">
+                    <a class='dropdown-button btn-flat grey white-text' href='#' data-activates='ticker-dropdown'>Ticker <i class="material-icons right">expand_more</i></a>
+
+                    <!-- Dropdown Structure -->
+                    <ul id='ticker-dropdown' class='dropdown-content'>
+                      <li><a href="#!">Tickers</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#!">AAPL - Apple Inc.</a></li>
+                    </ul>
                   </div>
-                  <div class="input-field col s6">
+
+                  <div class="input-field col s4">
                     <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
+                    <label for="last_name">Shares</label>
+                  </div>
+                  <div class="input-field col s4">
+                    <p>
+                      <input name="group1" type="radio" id="test1" />
+                      <label for="test1">Buy</label>
+                    </p>
+                    <p>
+                      <input name="group1" type="radio" id="test2" />
+                      <label for="test2">Sell</label>
+                    </p>
                   </div>
                 </div>
               </div>
