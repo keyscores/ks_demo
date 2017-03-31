@@ -1,0 +1,14 @@
+
+{
+  "public": {
+
+  },
+  "galaxy.meteor.com": {
+    "env":
+      { "ROOT_URL": "https://demo.keyscores.com",
+        "MONGO_URL": "mongodb://demo:asdf1234@candidate.15.mongolayer.com:11340,candidate.14.mongolayer.com:11668/keyscores_demo?replicaSet=set-58c89651a516d5108f000c44",
+        "MONGO_OPLOG_URL": "mongodb://demo:asdf1234@candidate.15.mongolayer.com:11340/local?authSource=keyscores_demo",
+      }
+  }
+
+}
