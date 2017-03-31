@@ -38,7 +38,7 @@ Meteor.methods({
 
     Lookup.rawCollection().aggregate(pipeline, Meteor.bindEnvironment(function (err, res) {
       console.log('updated Aggregate', res);
-      var lastTrade = Pond.find({ name: 'AAPL' },{ sort: { time: 1 }, limit: 1 }).fetch()[0]
+      var lastTrade = Pond.find({ name: 'AAPL' },{ sort: { time: -1 }, limit: 1 }).fetch()[0]
       console.log('lastTrade', lastTrade);
 
       var porfolioValue = lastTrade.price * res[0].shares
