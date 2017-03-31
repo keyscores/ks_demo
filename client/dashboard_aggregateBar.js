@@ -7,8 +7,8 @@ Template.aggregateBar.rendered = function(){
           datasets: [{
               label: 'Portfolio Value',
               data: [],
-              backgroundColor: 'rgba(255, 99, 132, 0.2)',
-              borderColor: 'rgba(255, 99, 132, 0.2)',
+              backgroundColor: '#4dd0e1',
+              borderColor: '#4dd0e1',
               borderWidth: 1
           }]
       },
@@ -29,6 +29,8 @@ Template.aggregateBar.rendered = function(){
                 barThickness : 3,
 
                 ticks: {
+                  autoSkip: true,
+                  maxTicksLimit: 5,
                   maxRotation: 0 // angle in degrees
                 },
                 time: {

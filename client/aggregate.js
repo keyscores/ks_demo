@@ -2,6 +2,9 @@
 
 Template.aggregate.rendered = function () {
   $('.collapsible').collapsible()
+  Meteor.call("getAggregateStatus", function(err, res){
+    Session.set("aggregating", res === 'true')
+  })
   // Session.set('varName', 'hello moto');
 }
 
@@ -13,15 +16,14 @@ Template.aggregate.helpers({
     return [1, 2, 3]
   },
   "editorOptions": function() {
-  return {
-    lineNumbers: true,
-    mode: "javascript"
+    return {
+      lineNumbers: true,
+      mode: "javascript"
+    }
+  },
+  isAggregating: function (){
+    return Session.get('aggregating')
   }
-},
-
-"editorCode": function() {
-  return "Code to show in editor";
-}
 })
 
 Template.aggregate.events({
@@ -35,5 +37,23 @@ Template.aggregate.events({
 
 
      }, 100);
+  },
+  "change .aggregate-start-switch": function(event, template){
+    var toggled = $(event.currentTarget).prop('checked')
+    // console.log('switch toggled', $(event.currentTarget).prop('checked'));
+    if (toggled){
+      Meteor.call('startAggregate', function(err, res){
+         Meteor.call('getStreamStatus', function(err, res) {
+           Session.set('aggregating', res === 'true')
+         })
+       })
+    } else {
+       Meteor.call('stopAggregate', function(err, res){
+         Meteor.call('getStreamStatus', function(err, res) {
+           Session.set('aggregating', res === 'true')
+         })
+       })
+    }
+
   },
 });

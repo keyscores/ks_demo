@@ -3,6 +3,18 @@
     <h4 class="center"> Portfolio </h4>
     {{>dashboard}}
   </div>
+  <div class="fixed-action-btn">
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large cyan lighten-2">
+        <i class="large material-icons">more_vert</i>
+      </a>
+      <ul>
+        <li><a class="btn-floating cyan lighten-2"><i class="material-icons">add</i></a></li>
+        <li><a href="{{pathFor 'edit_dashboard'}}" class="btn-floating cyan lighten-2"><i class="material-icons">edit</i></a></li>
+
+      </ul>
+    </div>
+  </div>
 </template>
 
 <template name="dashboardEditor">
@@ -34,11 +46,11 @@
       <div class="grid-item grid-item--width2">
         {{>aggregateBar}}
       </div>
-      <div class="grid-item" style="height: 100px">
+      <!-- <div class="grid-item" style="height: 100px">
         {{#if this.editor}}
         Testing {{this.editor}}
         {{/if}}
-      </div>
+      </div> -->
     </div>
 
   <!-- <div class="gridster grey lighten-3">

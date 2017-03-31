@@ -21,8 +21,8 @@ Template.dashboard.rendered = function () {
             label: "Stock Price",
             fill: false,
             lineTension: 0.1,
-            backgroundColor: "rgba(75,192,192,0.4)",
-            borderColor: "rgba(75,192,192,1)",
+            backgroundColor: "#4dd0e1",
+            borderColor: "#4dd0e1",
             borderCapStyle: 'butt',
             borderDash: [],
             borderDashOffset: 0.0,
@@ -61,8 +61,8 @@ Template.dashboard.rendered = function () {
                 unit: 'day',
                 unitStepSize: 1,
                 ticks: {
-                  max: 2,
-
+                  autoSkip: true,
+                  maxTicksLimit: 5,
                   maxRotation: 0 // angle in degrees
                 },
                 // time: {

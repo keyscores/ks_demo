@@ -48,11 +48,21 @@ Meteor.methods({
     }))
   },
   startAggregate: function () {
+    if(interval){
+      clearInterval(interval)
+    }
+
     interval = Meteor.setInterval(function () {
       Meteor.call('aggregate')
     }, 5000);
+
+    process.env.AGGREGATING = true
   },
   stopAggregate: function () {
     clearInterval(interval)
+    process.env.AGGREGATING = false
+  },
+  getAggregateStatus: function () {
+    return process.env.AGGREGATING
   }
 });

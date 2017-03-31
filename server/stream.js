@@ -13,6 +13,10 @@ var faucet //= Readable({objectMode: true})
 var timer
 Meteor.methods({
   startStream: function () {
+    process.env.STREAMING = true
+    if(timer){
+      clearInterval(timer)
+    }
     faucet = Readable({objectMode: true})
     faucet._read = function () {
       // sets a readable stream that setQuote can implement
@@ -90,7 +94,7 @@ Meteor.methods({
     timer = setInterval(function () {
       // faucet.push('{"a": 3, "b": 4}')
       getQuote('AAPL')
-    }, 1000)
+    }, 5000)
 
     const ensureStringForProcess = new Transform({objectMode: true})
     ensureStringForProcess._transform = function (chunk, encoding, done) {
@@ -119,14 +123,20 @@ Meteor.methods({
     writeToDB.pipe(ensureStringForProcess).pipe(process.stdout)
   },
   stopStream: function () {
+    console.log("stop streaming")
     // setTimeout(function () {
+    clearInterval(timer)
+    process.env.STREAMING = false
+
     if ( faucet._readableState.flowing ) {
-      clearInterval(timer)
       faucet.pause()
     }
 
 
     // faucet.push(null)
     // }, 5 * 1000)
+  },
+  getStreamStatus: function () {
+    return process.env.STREAMING
   }
 })
