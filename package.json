@@ -2,7 +2,10 @@
   "name": "scarecrow",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor run",
+    "deploy": "DEPLOY_HOSTNAME=galaxy.meteor.com meteor deploy demo.keyscores.com --settings settings.json",
+    "remoteProd": "export MONGO_URL=mongodb://demo:asdf1234@candidate.15.mongolayer.com:11340,candidate.14.mongolayer.com:11668/keyscores_demo?replicaSet=set-58c89651a516d5108f000c44 && meteor"
+
   },
   "dependencies": {
     "JSONStream": "^1.3.1",
