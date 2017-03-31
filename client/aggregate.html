@@ -7,12 +7,47 @@
       </div> -->
       <ul class="pagination center">
         <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-        <li class="active"><a href="#!">AAPL Tracker</a></li>
-        <li class="waves-effect"><a href="#!">GOOG Tracker</a></li>
-        <li class="waves-effect"><a href="#!">Other Stream</a></li>
+        <li class="active"><a href="#!">Shares Aggregate</a></li>
+        <li class="waves-effect"><a href="#!">Returns Aggregate</a></li>
         <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
       </ul>
 
+
+    <div class="row valign-wrapper">
+      <div class="col s6">
+        <label for="agg_name">name</label>
+        <input id="agg_name" type="tel" class="validate grey-text" value="Shares Aggregate">
+      </div>
+      <div class="col s4 valing-wrapper">
+        <label for="select-source" >React Source</label>
+
+        <select class="grey-text valg" id="select-source">
+          <option value="" disabled selected>Stock Ticker</option>
+          <option value="1">Stock Ticker</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+
+      </div>
+
+      <div class="col s2 valign">
+        <!-- <li class="center"> -->
+          <!-- <div class="collapsible-header grey-text"> -->
+            <!-- <div class='col s12'> -->
+              <div class="switch">
+                <label>
+                  <input class="aggregate-start-switch valign" type="checkbox" checked="{{#if isAggregating}} checked {{/if}}">
+                  <span class="lever"></span>
+                </label>
+              </div>
+            <!-- </div> -->
+           <!-- </div> -->
+        <!-- </li> -->
+      </div>
+    </div>
+
+    <div class="divider" style="margin-bottom: 20px">
+    </div>
 
     <div class="row">
       {{#each listPipeline}}
@@ -20,7 +55,7 @@
         <h5 class="center grey-text"> {{@index}} </h5>
         <ul class="collapsible" data-collapsible="accordion">
           <li>
-            <div class="collapsible-header grey-text"><i class="material-icons red-text text-lighten-2">fiber_manual_record </i> {{this}}</div>
+            <div class="collapsible-header grey-text"><i class="material-icons {{#if isAggregating }} teal-text text-lighten-2 {{else}} red-text text-lighten-2 {{/if}}">fiber_manual_record </i> {{this}}</div>
             <div class="collapsible-body">
               <div class="row">
                  <div class="col s12">
@@ -82,18 +117,7 @@
             </div>
           </li>
 
-          <li class="center">
-            <div class="collapsible-header grey-text">
-              <div class='col s12'>
-                <div class="switch">
-                  <label>
-                    <input class="aggregate-start-switch" type="checkbox" checked="{{#if isAggregating}} checked {{/if}}">
-                    <span class="lever"></span>
-                  </label>
-                </div>
-              </div>
-             </div>
-          </li>
+
         </ul>
       </div>
       {{/each}}

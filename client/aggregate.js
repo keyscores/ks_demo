@@ -2,6 +2,10 @@
 
 Template.aggregate.rendered = function () {
   $('.collapsible').collapsible()
+  $('ul.tabs').tabs();
+  $('select').material_select();
+  Materialize.updateTextFields();
+
   Meteor.call("getAggregateStatus", function(err, res){
     Session.set("aggregating", res === 'true')
   })
@@ -43,13 +47,13 @@ Template.aggregate.events({
     // console.log('switch toggled', $(event.currentTarget).prop('checked'));
     if (toggled){
       Meteor.call('startAggregate', function(err, res){
-         Meteor.call('getStreamStatus', function(err, res) {
+         Meteor.call('getAggregateStatus', function(err, res) {
            Session.set('aggregating', res === 'true')
          })
        })
     } else {
        Meteor.call('stopAggregate', function(err, res){
-         Meteor.call('getStreamStatus', function(err, res) {
+         Meteor.call('getAggregateStatus', function(err, res) {
            Session.set('aggregating', res === 'true')
          })
        })

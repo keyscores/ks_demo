@@ -65,11 +65,11 @@ Template.dashboard.rendered = function () {
                   maxTicksLimit: 5,
                   maxRotation: 0 // angle in degrees
                 },
-                // time: {
-                //   displayFormats: {
-                //     'hour': 'mm'
-                //   }
-                // }
+                time: {
+                  displayFormats: {
+                    'hour': 'HH:mm'
+                  }
+                }
               }]
             }
           }

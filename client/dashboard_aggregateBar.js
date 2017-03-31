@@ -23,8 +23,8 @@ Template.aggregateBar.rendered = function(){
                 type: 'time',
                 unit: 'day',
                 unitStepSize: 1,
-                scaleSteps : 10,
-                maxTicksLimit: 2,
+                // scaleSteps : 10,
+                // maxTicksLimit: 2,
                 barPercentage: 0.2,
                 barThickness : 3,
 
@@ -35,7 +35,7 @@ Template.aggregateBar.rendered = function(){
                 },
                 time: {
                   displayFormats: {
-                    'hour': 'HH:mm:'
+                    'hour': 'HH:mm'
                   }
                 }
               }]
