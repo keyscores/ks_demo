@@ -52,17 +52,29 @@ Template.dashboard.rendered = function () {
       options: {
           scales: {
               yAxes: [{
+                // scaleOverride: true,
+                // scaleSteps: 5,
+                // scaleStepWidth: 20,
+
                   ticks: {
-                      beginAtZero:true
+                      // beginAtZero:true,
+                      // min: 130,
+                      beginAtZero: false,
+                      suggestedMin: 143.7,
+                      suggestedMax: 144.3,
+
                   }
               }],
               xAxes: [{
                 type: 'time',
                 unit: 'day',
                 unitStepSize: 1,
+
                 ticks: {
                   autoSkip: true,
                   maxTicksLimit: 5,
+                   beginAtZero: false,
+
                   maxRotation: 0 // angle in degrees
                 },
                 time: {
@@ -131,5 +143,13 @@ Template.dashboardEditor.events({
   },
   "click #stopAggregate": function(event, template){
      Meteor.call('stopAggregate')
+  }
+});
+
+
+Template.start.events({
+  "click #refresh": function(event, template){
+     Meteor.call("fixtureReset")
+    Materialize.toast('Refreshing Calcs', 4000)
   }
 });

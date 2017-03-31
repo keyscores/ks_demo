@@ -1,3 +1,3 @@
 Meteor.startup(function(){
-  Meteor.call('reset')
+  Meteor.call('fixtureReset')
 });

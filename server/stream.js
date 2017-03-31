@@ -74,7 +74,7 @@ Meteor.methods({
       // console.log('jsonCleaner chunk', chunk);
       newObj = {}
       newObj['name'] = chunk.t
-      newObj['price'] = Number(chunk.l) * Random.fraction()
+      newObj['price'] = Number(chunk.l) //* Random.fraction()
       newObj['time'] = new Date
       newObj['lastTrade'] = new Date(chunk.lt_dts)
 
